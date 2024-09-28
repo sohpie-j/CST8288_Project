@@ -9,8 +9,6 @@ import com.algonquin.cst8288.fall24.assignment1.prescription.Prescription;
 import com.algonquin.cst8288.fall24.assignment1.prescription.PrintablePrescriptionService;
 import com.algonquin.cst8288.fall24.assignment1.treatment.MedicationTreatmentPlan;
 import com.algonquin.cst8288.fall24.assignment1.treatment.SurgeryTreatmentPlan;
-import com.algonquin.cst8288.fall24.assignment1.treatment.TreatmentPlan;
-import com.algonquin.cst8288.fall24.assignment1.prescription.PrescriptionService;
 import java.io.IOException;
 
 public class Physician {
