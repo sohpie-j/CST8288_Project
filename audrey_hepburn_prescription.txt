@@ -1,0 +1,7 @@
+Prescription
+---------------
+Patient Name: audrey hepburn
+Date of Birth: 2011-11-11
+Life Stage: YOUTH
+Planned Treatment: null
+Prescription Details: Surgery: Appendectomy, Follow-up in 1 month
