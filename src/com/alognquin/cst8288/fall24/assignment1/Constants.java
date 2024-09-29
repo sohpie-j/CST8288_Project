@@ -1,5 +1,11 @@
 package com.alognquin.cst8288.fall24.assignment1;
 
+/*
+* @author:KyungA Jang
+* @class: Constants
+* 
+*
+*/
 public class Constants {
 
 	public static final long ACUTE_DURATION = 7;

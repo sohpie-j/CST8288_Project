@@ -1,7 +1,0 @@
-Prescription
----------------
-Patient Name: John Doe
-Date of Birth: 1987-10-17
-Life Stage: ADULT
-Planned Treatment: null
-Prescription Details: Surgery: Appendectomy, Follow-up in 1 month

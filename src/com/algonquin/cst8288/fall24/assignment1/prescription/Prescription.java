@@ -2,15 +2,14 @@ package com.algonquin.cst8288.fall24.assignment1.prescription;
 
 import java.util.Date;
 
-/**
- * 
- * Calculate the details of the prescription according to the business rules.
- * The information to include should cover daily doses, duration, disease type,
- * surgery date, etc.
- * 
- */
-
-
+/*
+* @author:KyungA Jang
+* @description: Calculate the details of the prescription according to the business rules.
+*               The information to include should cover daily doses, duration, disease type,
+*               surgery date, etc.
+* @class: Prescription()
+*
+*/
 public class Prescription {
 	
 	long dailyDosageCount;
@@ -22,27 +21,34 @@ public class Prescription {
 	Date followUpDate;
         
         private String details;
-	// Add any other required attributes
-
+ 
+        // Constructor
 	public Prescription() {
 		
 	}
-    // Constructor
 
     /**
-     *
+     * Prescription(string details)
      * @param details
      */
     public Prescription(String details) {
         this.details = details;  // Set the details field
     }
 
-    // Getter method for details
+    /*
+    * getDetails()
+    * @description: Getter method for details
+    * @return: detail
+    */
     public String getDetails() {
         return details;
     }
 
-    // Setter method for details
+    /*
+    * getDetails(String details)
+    * @description: Setter method for details
+    * @param: detail
+    */
     public void setDetails(String details) {
         this.details = details;
     }

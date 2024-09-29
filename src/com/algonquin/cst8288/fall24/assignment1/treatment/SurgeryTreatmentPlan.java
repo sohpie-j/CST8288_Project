@@ -4,8 +4,8 @@ import com.algonquin.cst8288.fall24.assignment1.patient.Patient;
 
 /**
  * 
+ * @description: 
  * This class is responsible for implementing the business logic related to generating a treatment plan. 
- * 
  * You can use any method you prefer, such as StringBuilder or standard String, to construct the plan. Think of
  * treatment plan is a doctor notes in a summary format. 
  * Later, you will attach the treatment plan to detailed prescription.
@@ -16,8 +16,12 @@ import com.algonquin.cst8288.fall24.assignment1.patient.Patient;
  *  in order to address the xxx issue."
  * 
  * */
-
-
+/**
+ * @author KyungA Jang
+ * @clss SurgeryTreatmentPlan
+ * @super type: TreatmentPlan
+ * The patient management class  used by Physicians to perform multiple tasks. 
+ */
 public class SurgeryTreatmentPlan implements TreatmentPlan{
 
 	@Override

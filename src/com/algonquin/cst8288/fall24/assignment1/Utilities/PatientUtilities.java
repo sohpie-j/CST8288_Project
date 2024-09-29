@@ -8,18 +8,33 @@ import java.time.LocalDate;
 import java.time.Period;
 
 /**
- *
- * @author kajan
+ * @author KyungA Jang
+ * @class PatientUtilities
  */
 public class PatientUtilities {
-        // Calculate patient age based on their date of birth (in "yyyy-MM-dd" format)
-    public static long calulatePatientAge(String dateOfBirth) {
+	
+    /*
+    * Calculate patient age based on their date of birth (in "yyyy-MM-dd" format)
+    * @param String dateOfBirth
+    * @return
+    * @throw
+    */
+    public static long caculatePatientAge(String dateOfBirth) {
         LocalDate dob = LocalDate.parse(dateOfBirth);
         LocalDate currentDate = LocalDate.now();
-        return Period.between(dob, currentDate).getYears();
+        
+        if(dateOfBirth != null){
+            return Period.between(dob, currentDate).getYears();
+        } else {
+            throw new IllegalArgumentException("Date of birth is not set.");
+        }
     }
 
-    // Determine life stage based on the patient's age
+    /*
+    * Determine life stage based on the patient's age
+    * @method: determineLifeStage
+    * @return: Stage
+    */
     public static String determineLifeStage(long age) {
         if (age <= 6) {
             return "CHILD";
@@ -30,7 +45,13 @@ public class PatientUtilities {
         }
     }
 
-    // Determine the dose count based on the patient's life stage
+    /*
+    * Determine the dose count based on the patient's life stage
+    * @method: determineDoeseCount
+    * @param: String lifeStage
+    * @return: DoseCount
+    * @throw
+    */
     public static int determineDoseCount(String lifeStage) {
         switch (lifeStage) {
             case "CHILD" -> {
