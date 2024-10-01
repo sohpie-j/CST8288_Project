@@ -11,12 +11,13 @@ package EmploymentManagementSystem;
 public class EmployeeFactory {
     public static Employee createEmployee(String employeeType, String id, String name, String department, String role, int hours, double salary) {
         switch (employeeType.toLowerCase()) {
-            case "fulltime":
+            case "fulltime" -> {
                 return new FullTimeEmployee(id, name, department, role, hours, salary);
-            case "parttime":
+            }
+            case "parttime" -> {
                 return new PartTimeEmployee(id, name, department, role, hours, salary);
-            default:
-                throw new IllegalArgumentException("Invalid employee type: " + employeeType);
+            }
+            default -> throw new IllegalArgumentException("Invalid employee type: " + employeeType);
         }
     }
 }

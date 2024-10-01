@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class EmployeeManager {
     private static EmployeeManager instance;
-    private Map<String, Employee> employees;
+    private final Map<String, Employee> employees;
 
     // Private constructor to prevent instantiation
     private EmployeeManager() {
@@ -35,19 +35,4 @@ public class EmployeeManager {
     public Employee getEmployee(String employeeId) {
         return employees.get(employeeId);
     }
-
-//    @Override
-//    public void clockIn() {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    @Override
-//    public void clockOut() {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    @Override
-//    public void trackWorkHours() {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
 }
