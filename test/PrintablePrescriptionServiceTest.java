@@ -24,7 +24,7 @@ public class PrintablePrescriptionServiceTest {
         String prescription = printablePrescriptionService.generatePrescription(patient);
         
         assertTrue(prescription.contains("Prescription"));
-        assertTrue(prescription.contains("Patient Name: Jane Smith"));
+        assertTrue(prescription.contains("Patient Name: Hyun bin"));
         assertTrue(prescription.contains("Prescription Details: Medication: Amoxicillin"));
     }
 }

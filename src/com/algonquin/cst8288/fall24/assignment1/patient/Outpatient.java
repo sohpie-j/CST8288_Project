@@ -23,16 +23,9 @@ public class Outpatient extends Patient {
         return appointmentDate;
     }
 
-    /*
-    * @description: Implementation for admitting an outpatient.
-    * @return: UnsupportedOperationException();
-    */
-    @Override
-    public void admit() {
-           
-        throw new UnsupportedOperationException("Unexpcted error occurred");	
-	
+    public void scheduleAppointment() {
+        System.out.println(getName() + " has an appointment on " + getAppointmentDate());
     }
-      
+
 }
 

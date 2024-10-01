@@ -19,9 +19,10 @@ public class SurgeryTreatmentPlanTest {
 
     @Test
     public void testCreateTreatmentPlan() {
-        String expectedPlan = "Surgery Treatment Plan:\n" +
-                "- Fasting Requirement: 8 Hours Before Surgery\n" +
-                "- Follow-up Schedule: In a Month";
+        String expectedPlan = """
+                              Surgery Treatment Plan:
+                              - Fasting Requirement: 8 Hours Before Surgery
+                              - Follow-up Schedule: In a Month""";
 
         String actualPlan = surgeryTreatmentPlan.createTreatmentPlan(inpatient);
         assertEquals(expectedPlan, actualPlan);

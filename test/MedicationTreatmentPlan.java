@@ -19,10 +19,11 @@ public class MedicationTreatmentPlan {
 
     @Test
     public void testCreateTreatmentPlan() {
-        String expectedPlan = "Medication Treatment Plan:\n" +
-                "- Doses per day: 3\n" +
-                "- Duration: 14 days\n" +
-                "- Medication: Antibiotics";
+        String expectedPlan = """
+                              Medication Treatment Plan:
+                              - Doses per day: 3
+                              - Duration: 14 days
+                              - Medication: Antibiotics""";
         
         String actualPlan = medicationTreatmentPlan.createTreatmentPlan(outpatient);
         assertEquals(expectedPlan, actualPlan);

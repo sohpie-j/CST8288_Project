@@ -24,7 +24,7 @@ public class OnlinePrescriptionServiceTest {
         String prescription = onlinePrescriptionService.generatePrescription(patient);
         
         assertTrue(prescription.contains("<h1>Prescription</h1>"));
-        assertTrue(prescription.contains("<p><strong>Patient Name:</strong> John Doe</p>"));
+        assertTrue(prescription.contains("<p><strong>Patient Name:</strong>audrey hepburn</p>"));
         assertTrue(prescription.contains("<p><strong>Prescription Details:</strong> Surgery: Appendectomy</p>"));
     }
 }

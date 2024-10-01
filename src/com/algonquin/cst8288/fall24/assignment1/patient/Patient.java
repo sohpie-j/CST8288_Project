@@ -204,7 +204,7 @@ public abstract class Patient {
     /**
      * @desciption: Abstract admit 
      */
-    public abstract void admit();
+    //public abstract void admit();
       
 }
 

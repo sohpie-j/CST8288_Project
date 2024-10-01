@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>390</y>
+      <w>220</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::prescription
+Prescription
+--
+-dailyDosageCount:long
+-duration:long
+-diseaseType:String
+-surgeryDate:Date
+-riskFactor:String
+-isFastingRequired:boolean
+-followUpDate:Date
+-String details:String
+--
++getDetails():String
++setDetails(String):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>280</y>
+      <w>240</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Class: Patient
+--
+- id:String
+- name:String
+- email:String
+- phoneNumber:String
+- dateOfBirth:String
+- age:long
+- lifeStage:String
+- plannedTreatment:String
+- prescriptions:Prescription
+--
++Patient(String, String, String, String, String)
++getID():String
++getName():String
++getEmail():String
++getPhoneNumber():String
++setId(String):void
++setName(Strinig):void
++setEmail(String):void
++setPhoneNumber(string):void
++getDateOfBirth():String
++setDateOfBirth(String):void
++getAge():long
++setAge(long):void
++getLifeStage():String
++setLifeStage(string):void
++GetPrescription():Prescription
++setPrescription(Prescription):void
++getPlannedTreatment():String
++setPlannedTreatment(String):void
++admit():void
+bg=yellow
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>30</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::patient
+Inpatient
+--
+- roomNumber: String
+--
++ Inpatient: string, String, String, String, String
++ getRoomNumber():String
++ admit()void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>30</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::patient
+Outptient
+--
+-appointDate:String
+--
++Outpatient(String,String,String,String,String)
++getAppointmnetDate():String
++admit():void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>680</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::prescription
+PrintablePrescriptionService
+--
+--
++generatePrescription(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>210</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>170</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;110.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>270</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::management
+Patientmanagement
+--
+--
++createTramentPlan(Patient):void
++generatePrescription(Patient):String
++generatePrescription(Patient,String):void
+-calulatePatientAge():long
+-determineLifeStage(long):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>50</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Package::Treatment
+TreatmentPlan
+--
+--
++createTreatmentPlan(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>190</y>
+      <w>120</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+fg=blue
+-treament 0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>220</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::prescription
+OnlinePrescriptionService
+--
+--
++OnlinePrescriptionSertvice()
++generatePrescription(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>410</y>
+      <w>130</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+fg=blue
+-presciption 0..1</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>470</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Package::prescription
+PrescriptionService
+--
+--
++generatePrescirption(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>610</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>320</y>
+      <w>80</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+fg=blue</panel_attributes>
+    <additional_attributes>60.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>350</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::treatment
+SurgeryTreatmentPlan
+--
+--
++creatTreatmentPlan(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>30</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::treatment
+MedicationTreamentPlan
+--
+--
++creatTreatmentPlan(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>190</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::Utilities
+PatientUtilities
+--
+--
++caculatePatientAge(String):Long
++determineLifStage(long):Long
++determineDoseCount(String):int
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>520</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Package::prescription
+PrintablePrescriptionService
+--
+--
++generatePrescription(Patient):String
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>30</y>
+      <w>250</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Constants
+--
++ACUTE_DURATION:long
++INFECTION_DURATION:long
++CHRONIC_DURATION:long
++ACUTE:String
++INFECTION:String
++CHRONIC:String
++CHILD:String
++YOUTH:String
++ADULT:String
++HIGH:String
++MEDIUM:String
++LOW:String
+--
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>440</y>
+      <w>250</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+Physician
+--
+--
++validatePatientData(Patient):boolean
+-isValidName(String):boolean
+-isValidAlphaNumberc(String):boolean
+-isValidEmail(String):boolean
+-isValidPhone(String):boolean
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>320</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+PatientValidator
+--
+--
+main(String[]):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>560</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>100</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;40.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>150</y>
+      <w>90</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>510</y>
+      <w>130</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>-presciption
+fg=blue
+lt=&lt;.
+</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+</diagram>
