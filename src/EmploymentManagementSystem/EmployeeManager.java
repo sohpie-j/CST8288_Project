@@ -3,13 +3,32 @@ package EmploymentManagementSystem;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ * @author KyungA Jang
+ * @class EmployeeManager
+ * Implemented Singleton Responsibility Principle: only one instance here
+ * class EmployeeManager handles the employee information to add or delete.
+ * This system only allows this functionality.
+ * @method:
+ *  addEmployee(Employee employee)
+ *  removeEmployee(String employeeID)
+ *  getEmployee(String employeeID)
+ */
+
 public class EmployeeManager {
+    
+    //variable to store the one instance of class
     private static EmployeeManager instance;
+    
+    //lists for storing the employees
     private final Map<String, Employee> employees;
 
-    // Private constructor to prevent instantiation
+    // Private constructor to prevent instantiation: not touch from outside
     private EmployeeManager() {
-        employees = new HashMap<>();  // Initialize the employees map here
+        
+        // Initialize the employees map here
+        employees = new HashMap<>();  
     }
     
     // Method to get the single instance
@@ -19,7 +38,6 @@ public class EmployeeManager {
         }
         return instance;
     }
-
 
     // Add an employee
     public void addEmployee(Employee employee) {

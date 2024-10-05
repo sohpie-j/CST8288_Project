@@ -6,8 +6,18 @@ package EmploymentManagementSystem;
 
 /**
  *
- * @author kajan
+ * @author KyungA Jang
+ * @class PartTimeEmployeeBuilder 
+ * inherited from EmployeeBuilder (Builder pattern)
+ * @
+ *  PartTimeEmployeeBuilder setId(String id)
+ *  PartTimeEmployeeBuilder setBane(String name)
+ *  PartTimeEmployeeBuilder setDepartment(String department)
+ *  PartTimeEmployeeBuilder  setRole(String role)
+ *  PartTimeEmployeeBuilder setWorkingHoursePerWeek(int hours)
+ *  PartTimeEmployeeBuilder setSalary(double salary)
  */
+
 public class PartTimeEmployeeBuilder implements EmployeeBuilder {
     private String id;
     private String name;

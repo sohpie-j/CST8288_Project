@@ -6,7 +6,10 @@ package EmploymentManagementSystem;
 
 /**
  *
- * @author kajan
+ * @author KyungA Jang
+ * @class Employee (Abstract)
+ * Definition of Employee ID, name, department, role, working hour a week
+ * and salary.
  */
 public abstract class Employee {
     public String id;
@@ -16,6 +19,9 @@ public abstract class Employee {
     public int workingHoursPerWeek;
     public double salary;
 
+    /*
+    * contructuor: initialize the employee information
+    */
     public Employee(String id, String name, String department, String role, int workingHoursPerWeek, double salary) {
         this.id = id;
         this.name = name;
@@ -25,7 +31,18 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    /*
+    * abstract method to be implemented by subclasses for individuals
+    * different implementation depends on the full time and part time employee.
+    */
     public abstract void clockIn();
     public abstract void clockOut();
     public abstract void trackWorkHours();
+    
+    /*
+    * Common method for showing details
+    */
+    public void showDetails() {
+        System.out.println("ID: " + id + ", Name: " + name + ", Department: " + department + ", Role: " + role);
+    }
 }

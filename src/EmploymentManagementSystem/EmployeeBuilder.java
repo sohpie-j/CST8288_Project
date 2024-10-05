@@ -4,10 +4,21 @@
  */
 package EmploymentManagementSystem;
 
+
 /**
  *
- * @author kajan
+ * @author KyungA Jang
+ * @class EmployeeBuilder (Interface)
+ * Implemented Builder pattern: handle the object more flexible
+ * @
+ *  setId(String id)
+ *  setBane(String name)
+ *  setDepartment(String department)
+ *  setRole(String role)
+ *  setWorkingHoursePerWeek(int hours)
+ *  setSalary(double salary)
  */
+
 public interface EmployeeBuilder {
     EmployeeBuilder setId(String id);
     EmployeeBuilder setName(String name);
