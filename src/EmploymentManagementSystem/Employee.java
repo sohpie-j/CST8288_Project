@@ -29,6 +29,7 @@ public abstract class Employee {
         this.role = role;
         this.workingHoursPerWeek = workingHoursPerWeek;
         this.salary = salary;
+
     }
 
     /*
@@ -43,6 +44,11 @@ public abstract class Employee {
     * Common method for showing details
     */
     public void showDetails() {
-        System.out.println("ID: " + id + ", Name: " + name + ", Department: " + department + ", Role: " + role);
+        System.out.println("ID: " + id + 
+                   ", Name: " + name + 
+                   ", Department: " + department + 
+                   ", Role: " + role +
+                   ", WorkingHourPerWeek: " + workingHoursPerWeek +
+                   ", Salary: " + salary);
     }
 }

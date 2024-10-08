@@ -16,22 +16,17 @@ public class EMS {
     
     public static void main(String[] args) {
         
-        //Get one instance from EmployeeManager implemented SRP
+// Get one instance from EmployeeManager implemented using SRP
         EmployeeManager manager = EmployeeManager.getInstance(); 
 
-        // Using the Builder pattern to create a Full-Time Employee
+        // Using the Builder pattern with EmployeeDirector to create a Full-Time Employee
         EmployeeBuilder fullTimeBuilder = new FullTimeEmployeeBuilder();
-        Employee fullTimeEmployee = fullTimeBuilder.setId("000001")
-                                                   .setName("Cute Apple")
-                                                   .setDepartment("Programming")
-                                                   .setRole("Programmer")
-                                                   .setWorkingHoursPerWeek(40)
-                                                   .setSalary(80000)
-                                                   .build();
+        EmployeeDirector director = new EmployeeDirector(fullTimeBuilder);
+        Employee fullTimeEmployee = director.constructEmployee("000001", "Cute Apple", "Programming", "Programmer", 40, 80000);
         manager.addEmployee(fullTimeEmployee);
 
         // Using the Factory pattern to create a Part-Time Employee
-        Employee partTimeEmployee = EmployeeFactory.createEmployee("parttime", "000002", "Handsome John", "Sales", "Saleman", 20, 40000);
+        Employee partTimeEmployee = EmployeeFactory.createEmployee("parttime", "000002", "Handsome John", "Sales", "Salesman", 20, 40000);
         manager.addEmployee(partTimeEmployee);
 
         // Retrieve and display employees
@@ -46,10 +41,11 @@ public class EMS {
         retrievedFullTime.clockOut();
         retrievedFullTime.trackWorkHours();
         
-        // Simulate clocking in and out
+        // Simulate clocking in and out for part-time employee
         retrievedPartTime.clockIn();
         retrievedPartTime.clockOut();
         retrievedPartTime.trackWorkHours();
     }
 }
 
+ 
