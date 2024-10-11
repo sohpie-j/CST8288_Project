@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu_factory;
 import components.Entree;
 import components.MainCourse;
@@ -14,8 +10,8 @@ import components.WinterDessert;
 import components.WinterDrink;
 
 /**
- *
- * @author gouraya
+ * WinterRestaurantMenuFactory is a concrete factory that implements the RestaurantMenuFactory
+ * interface. It creates Winter-specific menu items such as entrees, main courses, desserts, and drinks.
  */
 public class WinterRestaurantMenuFactory implements RestaurantMenuFactory {
     

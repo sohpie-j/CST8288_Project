@@ -1,15 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package components;
 
+package components;
 /**
- *
- * @author gouraya
+ * The Drink interface represents a Drink in a restaurant menu.
+ * Classes that implement this interface should define their specific desserts.
  */
 public interface Drink {
-    
+     
+    /**
+     * Returns a string representation of the Drink items.
+     * 
+     * @return a string describing the Drink items.
+     */
     @Override
     public String toString();
 

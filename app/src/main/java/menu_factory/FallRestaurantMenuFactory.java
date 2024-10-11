@@ -1,21 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu_factory;
 
 import components.Entree;
 import components.MainCourse;
 import components.Dessert;
 import components.Drink;
-
 import components.FallEntree;
 import components.FallMainCourse;
 import components.FallDessert;
 import components.FallDrink;
+
 /**
- *
- * @author gouraya
+ * FallRestaurantMenuFactory is a concrete factory that implements the RestaurantMenuFactory
+ * interface. It creates fall-specific menu items such as entrees, main courses, desserts, and drinks.
  */
 public class FallRestaurantMenuFactory implements RestaurantMenuFactory {
 
@@ -23,19 +19,19 @@ public class FallRestaurantMenuFactory implements RestaurantMenuFactory {
     public Drink createDrink() {
         return new FallDrink();
     }
-    
+
     @Override
     public MainCourse createMainCourse() {
-         return new FallMainCourse();
+        return new FallMainCourse();
     }
 
-    @Override    
+    @Override
     public Entree createEntree() {
-         return new FallEntree();
+        return new FallEntree();
     }
 
-    @Override    
+    @Override
     public Dessert createDessert() {
         return new FallDessert();
-    }    
+    }
 }

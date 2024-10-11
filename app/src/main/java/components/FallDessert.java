@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package components;
 
 /**
- *
- * @author gouraya
+ * FallDessert is a concrete class that implements the Dessert interface.
+ * It represents the dessert menu items for the Fall season.
  */
 public class FallDessert implements Dessert {
 
@@ -14,16 +10,22 @@ public class FallDessert implements Dessert {
     private final String item2;
     private final String item3;
 
-    // Constructor to set winter-specific menu items
+    /**
+     * Constructor to set fall-specific dessert menu items.
+     */
     public FallDessert() {
         this.item1 = "Carrot Cake";
-        this.item2 = "White Chocolate Cjeesecale";
+        this.item2 = "White Chocolate Cheesecake";
         this.item3 = "Apple Pie";
     }
 
-    // Optionally, you can add a method to return a string representation of the main course
+    /**
+     * Returns a string representation of the fall dessert items.
+     * 
+     * @return a string listing the dessert items.
+     */
     @Override
     public String toString() {
-        return item1 + ", " + item2 + ", " + item3;
+        return item1 + "\n" + item2 + "\n" + item3;
     }
 }

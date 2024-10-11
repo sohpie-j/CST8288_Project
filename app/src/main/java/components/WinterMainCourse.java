@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package components;
 
 /**
- *
- * @author gouraya
+ * WinterMainCourse is a concrete class that implements the MainCourse interface.
+ * It represents the MainCourse menu items for the Fall season.
  */
 public class WinterMainCourse implements MainCourse {
     
@@ -14,14 +10,20 @@ public class WinterMainCourse implements MainCourse {
     private final String item2;
     private final String item3;
 
-    // Constructor to set winter-specific menu items
+    /**
+     * Constructor to set fall-specific MainCourse menu items.
+     */
     public WinterMainCourse() {
         this.item1 = "Roast Beef";
         this.item2 = "Pork Tenderloin";
         this.item3 = "Vegetarian Shepherd's Pie";
     }
 
-    // Optionally, you can add a method to return a string representation of the main course
+    /**
+     * Returns a string representation of the MainCourse entree items.
+     * 
+     * @return a string listing the MainCourse items.
+     */
     @Override
     public String toString() {
         return item1 + "\n " + item2 + "\n " + item3;

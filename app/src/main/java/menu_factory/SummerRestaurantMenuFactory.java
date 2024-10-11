@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu_factory;
 import components.Entree;
 import components.MainCourse;
@@ -13,8 +9,8 @@ import components.SummerMainCourse;
 import components.SummerDessert;
 import components.SummerDrink;
 /**
- *
- * @author gouraya
+ * SummerRestaurantMenuFactory is a concrete factory that implements the RestaurantMenuFactory
+ * interface. It creates Summer-specific menu items such as entrees, main courses, desserts, and drinks.
  */
 public class SummerRestaurantMenuFactory implements RestaurantMenuFactory {
    

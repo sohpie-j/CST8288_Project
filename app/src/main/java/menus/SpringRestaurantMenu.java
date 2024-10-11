@@ -1,43 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menus;
 
 import menu_factory.RestaurantMenuFactory;
-//import components.Dessert;
-//import components.Drink;
-//import components.MainCourse;
-//import components.Entree;
+
 /**
- *
- * @author gouraya
+ * SpringRestaurantMenu is a subclass of RestaurantMenu and represents a restaurant menu
+ * for the Spring season. It populates the menu with Spring-specific items.
  */
 public class SpringRestaurantMenu extends RestaurantMenu {
 
     RestaurantMenuFactory theFactory;
     
+    /**
+     * Constructor that accepts a factory for creating Spring-specific menu items.
+     * 
+     * @param factory the factory used to create the menu items.
+     */    
     public SpringRestaurantMenu(RestaurantMenuFactory factory) {
         this.theFactory = factory;
     }
-    
+
+    /**
+     * Populates the menu with Spring-specific menu items (entree, main course, dessert, drink).
+     */    
     @Override
     public void populateMenu() {
         System.out.println("Adding items to " + getName());
 
-        // Insert code to assign menu items created
-        
-                // Using the factory to create menu items for Winter Menu
         entree = theFactory.createEntree();
         mainCourse = theFactory.createMainCourse();
         dessert = theFactory.createDessert();
         drink = theFactory.createDrink();
-//        
-//        // Display the created menu items
-//        System.out.println("Entree: " + entree);
-//        System.out.println("Main Course: " + mainCourse);
-//        System.out.println("Dessert: " + dessert);
-//        System.out.println("Drink: " + drink);
-        
+   
     }    
 }

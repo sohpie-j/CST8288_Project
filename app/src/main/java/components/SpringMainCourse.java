@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package components;
 
 /**
- *
- * @author gouraya
+ * SpringMainCourse is a concrete class that implements the MainCourse interface.
+ * It represents the MainCourse menu items for the Fall season.
  */
+
 public class SpringMainCourse implements MainCourse {
     
     private final String item1;
@@ -15,7 +12,9 @@ public class SpringMainCourse implements MainCourse {
     private final String item3;
     private final String item4;
 
-    // Constructor to set winter-specific menu items
+    /**
+     * Constructor to set fall-specific MainCourse menu items.
+     */
     public SpringMainCourse() {
         this.item1 = "Sunny Rise Burger";
         this.item2 = "California Spring Salad";
@@ -23,7 +22,11 @@ public class SpringMainCourse implements MainCourse {
         this.item4 = "Sandwich";
     }
 
-    // Optionally, you can add a method to return a string representation of the main course
+    /**
+     * Returns a string representation of the fall MainCourse items.
+     * 
+     * @return a string listing the MainCourse items.
+     */
     @Override
     public String toString() {
         return item1 + "\n" + item2 + "\n" + item3 + "\n" + item4;

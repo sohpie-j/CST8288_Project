@@ -1,19 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package components;
 
 /**
- *
- * @author gouraya
+ * SummerDessert is a concrete class that implements the Dessert interface.
+ * It represents the Dessert menu items for the Fall season.
  */
 public class SummerDessert implements Dessert {
        private final String item1;
     private final String item2;
     private final String item3;
 
-    // Constructor to set winter-specific menu items
+    /**
+     * Constructor to set fall-specific Dessert menu items.
+     */
     public SummerDessert() {
         this.item1 = "Lime Pie";
         this.item2 = "Ultimate Cookie";
@@ -21,7 +19,11 @@ public class SummerDessert implements Dessert {
 
     }
 
-    // Optionally, you can add a method to return a string representation of the main course
+    /**
+     * Returns a string representation of the fall Dessert items.
+     * 
+     * @return a string listing the Dessert items.
+     */
     @Override
     public String toString() {
         return item1 + "\n" + item2 + "\n" + item3;

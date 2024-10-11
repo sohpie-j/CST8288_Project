@@ -1,15 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package components;
 
 /**
- *
- * @author gouraya
+ * The Dessert interface represents a dessert in a restaurant menu.
+ * Classes that implement this interface should define their specific desserts.
  */
 public interface Dessert {
     
+    /**
+     * Returns a string representation of the dessert items.
+     * 
+     * @return a string describing the dessert items.
+     */
     @Override
     public String toString();
 }

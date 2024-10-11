@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package components;
 
 /**
- *
- * @author gouraya
+ * SpringDessert is a concrete class that implements the Dessert interface.
+ * It represents the Dessert menu items for the Spring season.
  */
 public class SpringDessert implements Dessert {
        private final String item1;
@@ -14,7 +10,9 @@ public class SpringDessert implements Dessert {
     private final String item3;
     private final String item4;
 
-    // Constructor to set winter-specific menu items
+    /**
+     * Constructor to set Spring-specific Dessert menu items.
+     */
     public SpringDessert() {
         this.item1 = "Vanilla Crème Brûlée";
         this.item2 = "White Chocolate ";
@@ -22,7 +20,11 @@ public class SpringDessert implements Dessert {
         this.item4 = "Passion Fruit Fig Tart";
     }
 
-    // Optionally, you can add a method to return a string representation of the main course
+    /**
+     * Returns a string representation of the Spring Dessert items.
+     * 
+     * @return a string listing the Dessert items.
+     */
     @Override
     public String toString() {
         return item1 + "\n" + item2 + "\n" + item3 +"\n" + item4;

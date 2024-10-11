@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu_factory;
 import components.Entree;
 import components.MainCourse;
@@ -12,9 +8,10 @@ import components.SpringEntree;
 import components.SpringMainCourse;
 import components.SpringDessert;
 import components.SpringDrink;
+
 /**
- *
- * @author gouraya
+ * SpringRestaurantMenuFactory is a concrete factory that implements the RestaurantMenuFactory
+ * interface. It creates Spring-specific menu items such as entrees, main courses, desserts, and drinks.
  */
 public class SpringRestaurantMenuFactory implements RestaurantMenuFactory {
 
