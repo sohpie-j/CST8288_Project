@@ -1,50 +1,3 @@
-//package com.cst8288.lab2.indysimplelab2;
-///*
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-// */
-//
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//// Step 3: Implement AuthorDAO interface
-//public class AuthorDAOImpl implements AuthorDAO {
-//    private static final String SELECT_WINNERS = "SELECT * FROM INDYWINNERS ORDER BY year DESC LIMIT ? OFFSET ?";
-//
-//    @Override
-//    public List<AuthorDTO> getWinners(int offset, int limit) {
-//        List<AuthorDTO> winners = new ArrayList<>();
-//        try (Connection connection = DBConnection.getInstance().getConnection();
-//             PreparedStatement statement = connection.prepareStatement(SELECT_WINNERS)) {
-//
-//            statement.setInt(1, limit);
-//            statement.setInt(2, offset);
-//            ResultSet rs = statement.executeQuery();
-//
-//            while (rs.next()) {
-//                AuthorDTO winner = new AuthorDTO();
-//                winner.setYear(rs.getInt("YEAR"));
-//                winner.setDriver(rs.getString("DRIVER"));
-//                winner.setAverageSpeed(rs.getDouble("AVERAGESPEED"));
-//                winner.setCountry(rs.getString("COUNTRY"));
-//                winners.add(winner);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return winners;
-//    }
-//
-//    @Override
-//    public boolean addWinner(AuthorDTO winner) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//}
-
 package com.cst8288.lab2.indysimplelab2;
 
 import java.sql.Connection;
@@ -54,10 +7,43 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The AuthorDAOImpl class provides concrete implementations of the {@link AuthorDAO} interface.
+ * It interacts with the database to retrieve and add data about Indy winners.
+ * 
+ * <p>This class handles SQL operations such as selecting and inserting data
+ * using JDBC and ensures proper resource management with try-with-resources.</p>
+ * 
+ * @author kajan
+ * @version 1.0
+ */
+
 public class AuthorDAOImpl implements AuthorDAO {
+    /**
+    * SQL query to retrieve a list of winners, ordered by year in descending order.
+    */
     private static final String SELECT_WINNERS = "SELECT * FROM INDYWINNERS ORDER BY YEAR DESC LIMIT ? OFFSET ?";
+    
+    /**
+    * SQL query to insert a new winner into the database.
+    */
     private static final String INSERT_WINNER = "INSERT INTO INDYWINNERS (YEAR, DRIVER, AVERAGESPEED, COUNTRY) VALUES (?, ?, ?, ?)";
 
+    /**
+    * Default constructor for {@code AuthorDAOImpl}.
+    */
+   public AuthorDAOImpl() {
+       // Default constructor
+   }
+
+    /**
+     * Retrieves a paginated list of Indy winners from the database.
+     * 
+     * @param offset The starting point for fetching records.
+     * @param limit The maximum number of records to fetch.
+     * @return A list of {@code AuthorDTO} objects representing the winners.
+     */
+    
     @Override
     public List<AuthorDTO> getWinners(int offset, int limit) {
         List<AuthorDTO> winners = new ArrayList<>();
@@ -82,7 +68,18 @@ public class AuthorDAOImpl implements AuthorDAO {
         }
         return winners;
     }
-
+    
+    /**
+     * Adds a new Indy winner to the database.
+     * 
+     * <p>This method checks for mandatory fields like the driver's name before
+     * attempting to insert the record into the database. It also manages transactions
+     * manually for greater control.</p>
+     * 
+     * @param winner An {@code AuthorDTO} object containing the winner's details.
+     * @return {@code true} if the insertion was successful, {@code false} otherwise.
+     */
+    
     @Override
     public boolean addWinner(AuthorDTO winner) {
         if (winner.getDriver() == null || winner.getDriver().isEmpty()) {

@@ -6,17 +6,59 @@ import javax.servlet.http.*;
 import java.sql.*;
 import javax.servlet.annotation.WebServlet;
 
+/**
+ * The {@code IndyWinnerSimpleSV} servlet handles HTTP requests to display a paginated list
+ * of Indianapolis 500 winners. It connects to the database, executes SQL queries with pagination,
+ * and formats the results into an HTML response.
+ * 
+ * <p>This servlet supports both GET and POST methods, where POST is redirected to GET.</p>
+ * 
+ * <p>URL Pattern: {@code /IndyWinnerSimpleSV}</p>
+ * 
+ * @author kajan
+ * @version 1.0
+ */
 @WebServlet(urlPatterns = {"/IndyWinnerSimpleSV"})
 public class IndyWinnerSimpleSV extends HttpServlet {
 
+    /**
+    * A buffer used for building the HTML response dynamically.
+    */
     private final StringBuilder buffer = new StringBuilder();
 
+    /**
+    * Default constructor for {@code IndyWinnerSimpleSV}.
+    */
+    public IndyWinnerSimpleSV() {
+        // Default constructor
+    }
+
+    /**
+     * Handles HTTP POST requests by redirecting to the GET method.
+     * 
+     * @param request The {@code HttpServletRequest} object.
+     * @param response The {@code HttpServletResponse} object.
+     * @throws ServletException If a servlet-specific error occurs.
+     * @throws IOException If an I/O error occurs.
+     */    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
     }
 
+    /**
+     * Handles HTTP GET requests to fetch and display winners.
+     * 
+     * <p>The method retrieves the current page number from the request parameter,
+     * connects to the database, executes a paginated SQL query, and formats the
+     * results into an HTML table.</p>
+     * 
+     * @param request The {@code HttpServletRequest} object.
+     * @param response The {@code HttpServletResponse} object.
+     * @throws ServletException If a servlet-specific error occurs.
+     * @throws IOException If an I/O error occurs.
+     */    
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -62,7 +104,12 @@ public class IndyWinnerSimpleSV extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    
+    /**
+     * Formats the HTML header for the response.
+     * 
+     * @param buffer The {@code StringBuilder} to store the HTML content.
+     */
     private void formatPageHeader(StringBuilder buffer) {
         // Format the HTML header page
         buffer.append("<html>");
@@ -75,7 +122,22 @@ public class IndyWinnerSimpleSV extends HttpServlet {
         buffer.append("</center></h2>");
         buffer.append("<br>");
     }
-
+    
+    /**
+     * Executes the SQL query to fetch paginated results from the database.
+     * 
+     * <p>This method also handles database connection, prepares the query with
+     * pagination (LIMIT and OFFSET), and appends the results to the buffer.</p>
+     * 
+     * @param driverName The name of the JDBC driver.
+     * @param connectionURL The database connection URL.
+     * @param user The database username.
+     * @param pass The database password.
+     * @param buffer The {@code StringBuilder} to store the HTML content.
+     * @param uri The request URI.
+     * @param currentPage The current page number for pagination.
+     * @param rowsPerPage The number of rows to display per page.
+     */
     private void sqlQuery(String driverName, String connectionURL, String user, String pass,
                           StringBuilder buffer, String uri, int currentPage, int rowsPerPage) {
         Connection con = null;
@@ -121,7 +183,18 @@ public class IndyWinnerSimpleSV extends HttpServlet {
         long elapsed = System.currentTimeMillis() - startMS;
         buffer.append("<br><i> (").append(rowCount).append(" rows in ").append(elapsed).append("ms) </i>");
     }
-
+    
+    /**
+     * Formats the {@link ResultSet} into an HTML table.
+     * 
+     * @param rs The {@code ResultSet} containing the query results.
+     * @param buffer The {@code StringBuilder} to store the HTML content.
+     * @param uri The request URI for generating pagination links.
+     * @param currentPage The current page number for pagination.
+     * @param rowsPerPage The number of rows displayed per page.
+     * @return The number of rows retrieved from the {@code ResultSet}.
+     * @throws SQLException If an SQL error occurs while processing the {@code ResultSet}.
+     */
     private int resultSetToHTML(ResultSet rs, StringBuilder buffer, String uri, int currentPage, int rowsPerPage) throws SQLException {
         int rowCount = 0;
 
